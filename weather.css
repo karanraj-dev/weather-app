@@ -1,0 +1,56 @@
+body{
+  margin: 0;
+  font-family: Arial,sans-serif;
+}
+:root{
+  font-size: 16px;
+}
+.weather-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+#input-city{
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid;
+  font-weight: bold;
+}
+.weatherBtn{
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: white;
+  font-weight: bold;
+  border: none;
+  background-color: rgb(5, 231, 42);
+}
+.weather-card{
+  margin-top: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  min-width: 300px;
+  background: linear-gradient(90deg,rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
+}
+.humidity{
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.description{
+  font-weight: bold;
+  font-style: italic;
+  font-size: 1.4rem;
+}
+.cloud{
+  font-size: 4rem;
+  margin: 0;
+}
+
+
+
+
+

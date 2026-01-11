@@ -47,12 +47,13 @@ function displayWeaterDetails(data){
 
   const tempDiv = document.createElement("h1");
   tempDiv.classList.add("temperature");
-  tempDiv.textContent = temp;
+  tempDiv.textContent = (temp - 273.15).toFixed(2);
+  tempDiv.textContent += "°C";
   weatherCard.appendChild(tempDiv);
 
   const humidityDiv = document.createElement("p");
   humidityDiv.classList.add("humidity");
-  humidityDiv.textContent = humidity;
+  humidityDiv.textContent = humidity + "% Humidity";
   weatherCard.appendChild(humidityDiv);
 
   const descriptionDiv = document.createElement("p");
@@ -60,16 +61,42 @@ function displayWeaterDetails(data){
   descriptionDiv.textContent = description;
   weatherCard.appendChild(descriptionDiv);
 
+  let cloud;
+
+  switch (true) {
+    case (id >= 200 && id < 300):
+      cloud = "⛈️";
+      break;
+    case (id >= 300 && id < 500):
+      cloud = "🌦️";
+      break;
+    case (id >= 500 && id < 600):
+      cloud = "🌧️";
+      break;
+    case (id >= 600 && id < 700):
+      cloud = "❄️";
+      break;
+    case (id >= 700 && id < 800):
+      cloud = "Atmosphere";
+      break;
+    case (id == 800):
+      cloud = "⛅";
+      break;
+    case (id >= 801):
+      cloud = "😶‍🌫️";
+      break;
+  
+    default:
+      cloud = "No Information";
+      break;
+  }
 
   const idDiv = document.createElement("p");
   idDiv.classList.add("cloud");
-  idDiv.textContent = id;
+  idDiv.textContent = cloud;
   weatherCard.appendChild(idDiv);
   
   weatherCard.style.display = "flex";
-  
-
-  
 
 }
 
